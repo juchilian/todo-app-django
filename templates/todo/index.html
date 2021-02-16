@@ -13,11 +13,12 @@
   <div class="row mt-4">
     <div class="col">
       <ul class="list-group">
-        {% if todo_item %}
+        {% if todo_items %}
           {% for todo_item in todo_items %}
             <li class="list-group-item">{{ todo_item.text }}
+              <span class="text-muted small">created: {{ todo_item.added_date}}</span>
               <div class="float-right">
-                <form action="delete_todo/{{todo_item.id}}/" action="post">
+                <form action="delete_todo/{{todo_item.id}}/" action="post">{% csrf_token %}
                   <button type="submit" class="btn btn-sm btn-danger">Delete</button>
                 </form>
               </div>

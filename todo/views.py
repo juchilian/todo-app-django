@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponseRedirect
 from .models import Todo
 
 # Create your views here.
@@ -13,5 +13,10 @@ def home_page(request):
 
 
 def add_todo(request):
-    print(request.POST)
+    content = request.POST["content"]
+    Todo.create(content).save()
+    return HttpResponseRedirect("/")
+
+def delete_todo(request, todo_id):
+    Todo.objects.get(id=todo_id).delete()
     return HttpResponseRedirect("/")
