@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '@7w^un+n4m0a_b=e@ev+6!v9jy*i=#&k4&0&dti74bkdg7a#qs'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['3.133.126.18', 'ec2-3-133-126-18.us-east-2.compute.amazonaws.com']
+ALLOWED_HOSTS = ['127.0.0.1' ,'3.133.126.18', 'ec2-3-133-126-18.us-east-2.compute.amazonaws.com']
 
 
 # Application definition
@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # My App
+    # 'todoApp',
     'todo',
 ]
 
